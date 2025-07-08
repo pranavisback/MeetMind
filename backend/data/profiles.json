@@ -1,0 +1,292 @@
+[
+  {
+    "clerkUserId": "user_2zSc09FD4znL0adfMLAQbBRMTWg",
+    "profile": {
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "avatar": "",
+      "bio": "",
+      "jobTitle": "",
+      "company": "",
+      "location": "",
+      "linkedIn": "",
+      "website": ""
+    },
+    "preferences": {
+      "skills": [],
+      "interests": [],
+      "goals": [],
+      "meetingPreferences": {
+        "format": "both",
+        "duration": "30min",
+        "timeZone": "UTC"
+      }
+    },
+    "isActive": true,
+    "createdAt": "2025-07-05T15:05:03.065Z",
+    "updatedAt": "2025-07-05T15:05:03.066Z",
+    "id": "1751727903065jqy7irwwb"
+  },
+  {
+    "clerkUserId": "user_2zTzcI0AOuE3cgEZwGVPGXmMpnk",
+    "profile": {
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "avatar": "",
+      "bio": "",
+      "jobTitle": "",
+      "company": "",
+      "location": "",
+      "linkedIn": "",
+      "website": ""
+    },
+    "preferences": {
+      "skills": [],
+      "interests": [],
+      "goals": [],
+      "meetingPreferences": {
+        "format": "both",
+        "duration": "30min",
+        "timeZone": "UTC"
+      }
+    },
+    "isActive": true,
+    "createdAt": "2025-07-06T02:45:32.066Z",
+    "updatedAt": "2025-07-06T02:45:32.066Z",
+    "id": "1751769932066pyh03mnps"
+  },
+  {
+    "clerkUserId": "user_2zU5fxtFbbjNgo0MEJdJRjL5KNl",
+    "profile": {
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "avatar": "",
+      "bio": "",
+      "jobTitle": "",
+      "company": "",
+      "location": "",
+      "linkedIn": "",
+      "website": ""
+    },
+    "preferences": {
+      "skills": [],
+      "interests": [],
+      "goals": [],
+      "meetingPreferences": {
+        "format": "both",
+        "duration": "30min",
+        "timeZone": "UTC"
+      }
+    },
+    "isActive": true,
+    "createdAt": "2025-07-06T03:35:18.205Z",
+    "updatedAt": "2025-07-06T03:35:18.205Z",
+    "id": "1751772918205g1fib3ilf"
+  },
+  {
+    "clerkUserId": "user_2zU6CWo8KlEMowsClZRQjXR4dGZ",
+    "profile": {
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "avatar": "",
+      "bio": "",
+      "jobTitle": "",
+      "company": "",
+      "location": "",
+      "linkedIn": "",
+      "website": ""
+    },
+    "preferences": {
+      "skills": [],
+      "interests": [],
+      "goals": [],
+      "meetingPreferences": {
+        "format": "both",
+        "duration": "30min",
+        "timeZone": "UTC"
+      }
+    },
+    "isActive": true,
+    "createdAt": "2025-07-06T03:39:39.220Z",
+    "updatedAt": "2025-07-06T03:39:39.220Z",
+    "id": "1751773179220robpuoal7"
+  },
+  {
+    "clerkUserId": "user_2zU74EV47CCxOo0dc3pv6dIdVYf",
+    "profile": {
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "avatar": "",
+      "bio": "",
+      "jobTitle": "",
+      "company": "",
+      "location": "",
+      "linkedIn": "",
+      "website": ""
+    },
+    "preferences": {
+      "skills": [],
+      "interests": [],
+      "goals": [],
+      "meetingPreferences": {
+        "format": "both",
+        "duration": "30min",
+        "timeZone": "UTC"
+      }
+    },
+    "isActive": true,
+    "createdAt": "2025-07-06T03:46:48.227Z",
+    "updatedAt": "2025-07-06T03:46:48.227Z",
+    "id": "1751773608227ez02k5od0"
+  },
+  {
+    "clerkUserId": "user_2zU7bxUBOIbbQhGCETMXjPDR2C5",
+    "profile": {
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "avatar": "",
+      "bio": "",
+      "jobTitle": "",
+      "company": "",
+      "location": "",
+      "linkedIn": "",
+      "website": ""
+    },
+    "preferences": {
+      "skills": [],
+      "interests": [],
+      "goals": [],
+      "meetingPreferences": {
+        "format": "both",
+        "duration": "30min",
+        "timeZone": "UTC"
+      }
+    },
+    "isActive": true,
+    "createdAt": "2025-07-06T03:51:15.673Z",
+    "updatedAt": "2025-07-06T03:51:15.673Z",
+    "id": "17517738756725bh2aorde"
+  },
+  {
+    "clerkUserId": "user_2zU8cr8uVNRf9SVzrmFQQffDcwR",
+    "profile": {
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "avatar": "",
+      "bio": "",
+      "jobTitle": "",
+      "company": "",
+      "location": "",
+      "linkedIn": "",
+      "website": ""
+    },
+    "preferences": {
+      "skills": [],
+      "interests": [],
+      "goals": [],
+      "meetingPreferences": {
+        "format": "both",
+        "duration": "30min",
+        "timeZone": "UTC"
+      }
+    },
+    "isActive": true,
+    "createdAt": "2025-07-06T03:59:35.524Z",
+    "updatedAt": "2025-07-06T03:59:35.524Z",
+    "id": "1751774375524hl1jd4bv7"
+  },
+  {
+    "clerkUserId": "user_2zUB95Wkyjj3gCQesBK36Ju2HVj",
+    "profile": {
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "avatar": "",
+      "bio": "",
+      "jobTitle": "",
+      "company": "",
+      "location": "",
+      "linkedIn": "",
+      "website": ""
+    },
+    "preferences": {
+      "skills": [],
+      "interests": [],
+      "goals": [],
+      "meetingPreferences": {
+        "format": "both",
+        "duration": "30min",
+        "timeZone": "UTC"
+      }
+    },
+    "isActive": true,
+    "createdAt": "2025-07-06T04:20:18.703Z",
+    "updatedAt": "2025-07-06T04:20:18.703Z",
+    "id": "1751775618703cl0zvyh1w"
+  },
+  {
+    "clerkUserId": "user_2zUEMtmGE47Yo7Nv3aKqsQbsxT5",
+    "profile": {
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "avatar": "",
+      "bio": "",
+      "jobTitle": "",
+      "company": "",
+      "location": "",
+      "linkedIn": "",
+      "website": ""
+    },
+    "preferences": {
+      "skills": [],
+      "interests": [],
+      "goals": [],
+      "meetingPreferences": {
+        "format": "both",
+        "duration": "30min",
+        "timeZone": "UTC"
+      }
+    },
+    "isActive": true,
+    "createdAt": "2025-07-06T04:46:48.360Z",
+    "updatedAt": "2025-07-06T04:46:48.360Z",
+    "id": "1751777208360s8ro4onnc"
+  },
+  {
+    "clerkUserId": "user_2zUop7ut62FZZ9QgmvcbGYo6DVD",
+    "profile": {
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "avatar": "",
+      "bio": "",
+      "jobTitle": "",
+      "company": "",
+      "location": "",
+      "linkedIn": "",
+      "website": ""
+    },
+    "preferences": {
+      "skills": [],
+      "interests": [],
+      "goals": [],
+      "meetingPreferences": {
+        "format": "both",
+        "duration": "30min",
+        "timeZone": "UTC"
+      }
+    },
+    "isActive": true,
+    "createdAt": "2025-07-06T09:46:36.057Z",
+    "updatedAt": "2025-07-06T09:46:36.057Z",
+    "id": "1751795196057m7znxill6"
+  }
+]
