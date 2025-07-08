@@ -413,4 +413,4 @@ For support, questions, or feature requests:
 
 ---
 
-**Built with ❤️ by the MeetMind Team** | **Making networking meaningful, one connection at a time**
+**Built with ❤️ by the Pranav** | **Making networking meaningful, one connection at a time**
