@@ -1,10 +1,12 @@
 # 🧠 MeetMind - AI-Powered Event Attendee Matching Engine
 
+
 [![React](https://img.shields.io/badge/React-18.0+-61DAFB?style=flat-square&logo=react)](https://reactjs.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-18.0+-339933?style=flat-square&logo=node.js)](https://nodejs.org/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?style=flat-square&logo=mongodb)](https://www.mongodb.com/)
 [![Groq](https://img.shields.io/badge/AI-Groq_Llama-FF6B6B?style=flat-square)](https://groq.com/)
 [![Clerk](https://img.shields.io/badge/Auth-Clerk-6C47FF?style=flat-square)](https://clerk.dev/)
+[![Fetch.ai](https://img.shields.io/badge/AI-Fetch.ai-FF6B6B?style=flat-square&logo=fetch.ai)](https://fetch.ai/)
 
 > **Transform networking events into meaningful connections with AI-powered attendee matching, real-time communication, and intelligent meeting scheduling.**
 
