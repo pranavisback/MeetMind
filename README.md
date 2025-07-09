@@ -14,6 +14,13 @@
 
 MeetMind is a comprehensive AI-powered platform that revolutionizes networking at events by intelligently matching attendees based on skills, interests, and networking goals. Using advanced AI algorithms powered by Groq's Llama models, the platform facilitates meaningful connections and automates meeting coordination.
 
+## 🚀 Live Demo
+
+**[🌐 Try MeetMind Live](https://pranavisback.github.io/MeetMind/)**
+
+Experience the platform in action! Create your profile, explore AI-powered matching, and connect with other attendees.
+
+
 ### ✨ Key Features
 
 - **🤖 AI-Powered Matching**: Advanced skill and interest compatibility analysis using Groq Llama models
