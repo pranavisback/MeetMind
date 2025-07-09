@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matching - MeetMind Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/meetmind-favicon.svg" type="image/svg+xml">
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+              <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center">
+                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"></path></svg>
+              </div>
+              <span class="text-xl font-bold text-gray-900">MeetMind</span>
+            </a>
+          </div>
+          <nav class="hidden md:flex space-x-8">
+            <a href="dashboard.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-indigo-600 hover:bg-gray-50">Dashboard</a>
+            <a href="profile.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-indigo-600 hover:bg-gray-50">Profile</a>
+            <a href="matching.html" class="px-3 py-2 rounded-md text-sm font-medium bg-indigo-100 text-indigo-700">Matching</a>
+            <a href="chat.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-indigo-600 hover:bg-gray-50">Chat</a>
+          </nav>
+          <div class="flex items-center space-x-4">
+            <span class="hidden sm:block text-sm font-medium text-gray-900">Demo User</span>
+            <div class="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center"><svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg></div>
+            <button id="mobile-menu-button" title="Open mobile menu" class="md:hidden p-2 text-gray-400 hover:text-gray-600"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path id="mobile-menu-open-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path><path id="mobile-menu-close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+          </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden">
+          <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
+            <a href="dashboard.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-indigo-600 hover:bg-gray-50">Dashboard</a>
+            <a href="profile.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-indigo-600 hover:bg-gray-50">Profile</a>
+            <a href="matching.html" class="block px-3 py-2 rounded-md text-base font-medium bg-indigo-100 text-indigo-700">Matching</a>
+            <a href="chat.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-indigo-600 hover:bg-gray-50">Chat</a>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="text-center mb-12">
+            <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mb-6">
+                <span class="text-3xl">🧠</span>
+            </div>
+            <h1 class="text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">AI Skill Matching</h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">Discover professionals who complement your skills and share your networking goals using advanced AI analysis</p>
+        </div>
+
+        <!-- Filters -->
+        <div class="bg-white rounded-2xl shadow-xl p-6 mb-8">
+            <h3 class="text-lg font-semibold text-gray-800 mb-4">Filter Matches</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                    <label for="number-of-matches" class="block text-sm font-medium text-gray-700 mb-2">Number of Matches</label>
+                    <select id="number-of-matches" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        <option>5 matches</option>
+                        <option>10 matches</option>
+                        <option>15 matches</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="min-compatibility-score" class="block text-sm font-medium text-gray-700 mb-2">Minimum Compatibility Score</label>
+                    <select id="min-compatibility-score" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        <option value="60">60% and above</option>
+                        <option value="70">70% and above</option>
+                        <option value="80">80% and above</option>
+                        <option value="90">90% and above</option>
+                    </select>
+                </div>
+                <div class="flex items-end">
+                    <button class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-6 rounded-lg hover:shadow-lg transition-all duration-200 font-medium">Refresh Matches</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Matches Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Match Card 1 -->
+            <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden group">
+                <div class="bg-gradient-to-r from-blue-500 to-purple-600 p-6 text-white">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-2xl">S</div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold">Sarah Chen</h3>
+                            <p class="text-blue-100">AI/ML Engineer</p>
+                        </div>
+                        <div class="px-3 py-1 rounded-full text-sm font-medium text-green-600 bg-green-100">🎯 92%</div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-gray-800 mb-2">AI Match Insights</h4>
+                        <p class="text-sm text-gray-600 mb-3">Excellent potential for AI research collaboration.</p>
+                        <div class="mb-3">
+                            <p class="text-xs font-medium text-gray-500 mb-1">Shared Interests:</p>
+                            <div class="flex flex-wrap gap-1"><span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">AI/ML</span><span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">Deep Learning</span></div>
+                        </div>
+                        <div>
+                            <p class="text-xs font-medium text-gray-500 mb-1">Complementary Skills:</p>
+                            <div class="flex flex-wrap gap-1"><span class="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full">Python</span><span class="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full">TensorFlow</span></div>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <button class="view-details-btn w-full bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded-lg font-medium" data-person="sarah">View Details</button>
+                        <div class="grid grid-cols-2 gap-3">
+                            <button class="chat-btn bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg font-medium text-sm" data-person="sarah">💬 Chat</button>
+                            <button class="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-lg font-medium text-sm">📅 Meet</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Match Card 2 -->
+            <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden group">
+                <div class="bg-gradient-to-r from-blue-500 to-purple-600 p-6 text-white">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-2xl">M</div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold">Marcus Johnson</h3>
+                            <p class="text-blue-100">Product Manager</p>
+                        </div>
+                        <div class="px-3 py-1 rounded-full text-sm font-medium text-yellow-600 bg-yellow-100">👍 87%</div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-gray-800 mb-2">AI Match Insights</h4>
+                        <p class="text-sm text-gray-600 mb-3">Strong potential for product development collaboration.</p>
+                        <div class="mb-3">
+                            <p class="text-xs font-medium text-gray-500 mb-1">Shared Interests:</p>
+                            <div class="flex flex-wrap gap-1"><span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">Product Strategy</span></div>
+                        </div>
+                        <div>
+                            <p class="text-xs font-medium text-gray-500 mb-1">Complementary Skills:</p>
+                            <div class="flex flex-wrap gap-1"><span class="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full">Analytics</span></div>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <button class="view-details-btn w-full bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded-lg font-medium" data-person="marcus">View Details</button>
+                        <div class="grid grid-cols-2 gap-3">
+                            <button class="chat-btn bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg font-medium text-sm" data-person="marcus">💬 Chat</button>
+                            <button class="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-lg font-medium text-sm">📅 Meet</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Match Card 3 -->
+            <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden group">
+                <div class="bg-gradient-to-r from-blue-500 to-purple-600 p-6 text-white">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-2xl">E</div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold">Elena Rodriguez</h3>
+                            <p class="text-blue-100">UX Designer</p>
+                        </div>
+                        <div class="px-3 py-1 rounded-full text-sm font-medium text-yellow-600 bg-yellow-100">👍 82%</div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-gray-800 mb-2">AI Match Insights</h4>
+                        <p class="text-sm text-gray-600 mb-3">Good potential for design system collaboration.</p>
+                        <div class="mb-3">
+                            <p class="text-xs font-medium text-gray-500 mb-1">Shared Interests:</p>
+                            <div class="flex flex-wrap gap-1"><span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">Design Systems</span></div>
+                        </div>
+                        <div>
+                            <p class="text-xs font-medium text-gray-500 mb-1">Complementary Skills:</p>
+                            <div class="flex flex-wrap gap-1"><span class="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full">Figma</span></div>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <button class="view-details-btn w-full bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded-lg font-medium" data-person="elena">View Details</button>
+                        <div class="grid grid-cols-2 gap-3">
+                            <button class="chat-btn bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg font-medium text-sm" data-person="elena">💬 Chat</button>
+                            <button class="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-lg font-medium text-sm">📅 Meet</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal for View Details -->
+    <div id="detailModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+        <div class="flex items-center justify-center min-h-screen px-4">
+            <div class="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+                <!-- Modal Header -->
+                <div class="bg-gradient-to-r from-blue-500 to-purple-600 p-6 text-white">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <div id="modalAvatar" class="w-20 h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-3xl">S</div>
+                            <div>
+                                <h2 id="modalName" class="text-2xl font-bold">Sarah Chen</h2>
+                                <p id="modalTitle" class="text-blue-100">AI/ML Engineer</p>
+                                <p id="modalLocation" class="text-blue-100 text-sm">San Francisco, CA</p>
+                            </div>
+                        </div>
+                        <button id="closeModal" class="text-white hover:text-gray-300 text-2xl">&times;</button>
+                    </div>
+                </div>
+
+                <!-- Modal Content -->
+                <div class="p-6">
+                    <!-- Match Score Section -->
+                    <div class="mb-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-semibold text-gray-800">Match Analysis</h3>
+                            <div id="modalScore" class="px-4 py-2 rounded-full text-lg font-medium text-green-600 bg-green-100">🎯 92%</div>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <p id="modalMatchReason" class="text-gray-700 mb-4">You and Sarah are an excellent match for AI research collaboration. Your complementary skills and shared interests create strong potential for meaningful professional networking.</p>
+                            
+                            <!-- Detailed Match Breakdown -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2">🎯 Shared Interests</h4>
+                                    <div id="modalSharedInterests" class="flex flex-wrap gap-2">
+                                        <span class="px-3 py-1 bg-green-100 text-green-700 text-sm rounded-full">AI/ML</span>
+                                        <span class="px-3 py-1 bg-green-100 text-green-700 text-sm rounded-full">Deep Learning</span>
+                                        <span class="px-3 py-1 bg-green-100 text-green-700 text-sm rounded-full">Neural Networks</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2">🔧 Complementary Skills</h4>
+                                    <div id="modalComplementarySkills" class="flex flex-wrap gap-2">
+                                        <span class="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full">Python</span>
+                                        <span class="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full">TensorFlow</span>
+                                        <span class="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full">PyTorch</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Match Factors -->
+                            <div class="mb-4">
+                                <h4 class="font-semibold text-gray-800 mb-2">📊 Match Factors</h4>
+                                <div class="space-y-2">
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-sm text-gray-600">Skill Compatibility</span>
+                                        <div class="flex items-center space-x-2">
+                                            <div class="w-32 bg-gray-200 rounded-full h-2">
+                                                <div class="bg-green-500 h-2 rounded-full match-progress-95"></div>
+                                            </div>
+                                            <span class="text-sm font-medium">95%</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-sm text-gray-600">Interest Alignment</span>
+                                        <div class="flex items-center space-x-2">
+                                            <div class="w-32 bg-gray-200 rounded-full h-2">
+                                                <div class="bg-blue-500 h-2 rounded-full match-progress-88"></div>
+                                            </div>
+                                            <span class="text-sm font-medium">88%</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-sm text-gray-600">Networking Goals</span>
+                                        <div class="flex items-center space-x-2">
+                                            <div class="w-32 bg-gray-200 rounded-full h-2">
+                                                <div class="bg-purple-500 h-2 rounded-full match-progress-92"></div>
+                                            </div>
+                                            <span class="text-sm font-medium">92%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Professional Details -->
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Professional Details</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-2">Experience</h4>
+                                <div id="modalExperience" class="text-gray-700 text-sm space-y-2">
+                                    <p>• 5+ years in AI/ML engineering</p>
+                                    <p>• Previously at Google AI Research</p>
+                                    <p>• PhD in Computer Science (Stanford)</p>
+                                    <p>• 15+ published papers in top-tier conferences</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-2">Current Focus</h4>
+                                <div id="modalCurrentFocus" class="text-gray-700 text-sm space-y-2">
+                                    <p>• Developing next-gen NLP models</p>
+                                    <p>• Leading AI ethics initiatives</p>
+                                    <p>• Mentoring junior engineers</p>
+                                    <p>• Speaking at AI conferences</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Networking Goals -->
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Networking Goals</h3>
+                        <div id="modalNetworkingGoals" class="bg-gray-50 rounded-lg p-4">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="px-3 py-1 bg-purple-100 text-purple-700 text-sm rounded-full">Research Collaboration</span>
+                                <span class="px-3 py-1 bg-purple-100 text-purple-700 text-sm rounded-full">Knowledge Sharing</span>
+                                <span class="px-3 py-1 bg-purple-100 text-purple-700 text-sm rounded-full">Industry Partnerships</span>
+                            </div>
+                            <p class="text-gray-700 text-sm">Looking to collaborate on cutting-edge AI research projects and share insights on responsible AI development.</p>
+                        </div>
+                    </div>
+
+                    <!-- Why This Match Works -->
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Why This Match Works</h3>
+                        <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-4">
+                            <div id="modalWhyMatch" class="space-y-3 text-gray-700">
+                                <p><strong>🎯 Complementary Expertise:</strong> Your web development background pairs perfectly with Sarah's AI/ML expertise for building AI-powered applications.</p>
+                                <p><strong>🤝 Shared Learning Goals:</strong> Both of you are passionate about staying current with emerging technologies and continuous learning.</p>
+                                <p><strong>🚀 Collaboration Potential:</strong> Strong potential for joint projects combining your frontend skills with her AI capabilities.</p>
+                                <p><strong>🌟 Mutual Benefit:</strong> You can learn advanced AI concepts while she gains insights into user-friendly AI application development.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex space-x-4">
+                        <button class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg font-medium transition-colors">💬 Start Chat</button>
+                        <button class="flex-1 bg-purple-600 hover:bg-purple-700 text-white py-3 px-6 rounded-lg font-medium transition-colors">📅 Schedule Meeting</button>
+                        <button class="flex-1 bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-lg font-medium transition-colors">🔗 Connect</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Person data for the modal
+        const personData = {
+            sarah: {
+                name: "Sarah Chen",
+                title: "AI/ML Engineer",
+                location: "San Francisco, CA",
+                avatar: "S",
+                score: "🎯 92%",
+                matchReason: "You and Sarah are an excellent match for AI research collaboration. Your complementary skills and shared interests create strong potential for meaningful professional networking.",
+                sharedInterests: ["AI/ML", "Deep Learning", "Neural Networks", "Computer Vision", "Research"],
+                complementarySkills: ["Python", "TensorFlow", "PyTorch", "Research Papers", "Team Leadership"],
+                experience: [
+                    "• 5+ years in AI/ML engineering",
+                    "• Previously at Google AI Research",
+                    "• PhD in Computer Science (Stanford)",
+                    "• 15+ published papers in top-tier conferences",
+                    "• Speaker at major AI conferences"
+                ],
+                currentFocus: [
+                    "• Developing next-gen NLP models",
+                    "• Leading AI ethics initiatives",
+                    "• Mentoring junior engineers",
+                    "• Speaking at AI conferences",
+                    "• Open source contributions"
+                ],
+                networkingGoals: ["Research Collaboration", "Knowledge Sharing", "Industry Partnerships", "Academic Networking"],
+                networkingDescription: "Looking to collaborate on cutting-edge AI research projects and share insights on responsible AI development.",
+                whyMatch: [
+                    "🎯 Complementary Expertise: Your web development background pairs perfectly with Sarah's AI/ML expertise for building AI-powered applications.",
+                    "🤝 Shared Learning Goals: Both of you are passionate about staying current with emerging technologies and continuous learning.",
+                    "🚀 Collaboration Potential: Strong potential for joint projects combining your frontend skills with her AI capabilities.",
+                    "🌟 Mutual Benefit: You can learn advanced AI concepts while she gains insights into user-friendly AI application development."
+                ]
+            },
+            marcus: {
+                name: "Marcus Johnson",
+                title: "Product Manager",
+                location: "New York, NY",
+                avatar: "M",
+                score: "👍 87%",
+                matchReason: "Marcus brings strong product strategy expertise that complements your technical skills. This match offers excellent potential for product development collaboration.",
+                sharedInterests: ["Product Strategy", "User Experience", "Analytics", "Market Research", "Innovation"],
+                complementarySkills: ["Analytics", "Market Research", "Agile", "User Research", "Business Strategy"],
+                experience: [
+                    "• 7+ years in product management",
+                    "• Previously at Amazon and Microsoft",
+                    "• MBA from Wharton School",
+                    "• Launched 5+ successful products",
+                    "• Led cross-functional teams of 20+"
+                ],
+                currentFocus: [
+                    "• Building AI-powered products",
+                    "• Data-driven product decisions",
+                    "• User experience optimization",
+                    "• Go-to-market strategies",
+                    "• Product analytics"
+                ],
+                networkingGoals: ["Product Collaboration", "Tech Partnerships", "Industry Insights", "Team Building"],
+                networkingDescription: "Seeking to connect with technical professionals to build innovative products that solve real user problems.",
+                whyMatch: [
+                    "🎯 Product-Tech Synergy: Your technical skills combined with Marcus's product expertise create perfect product development partnerships.",
+                    "🤝 Shared Vision: Both focused on creating user-centric solutions with measurable impact.",
+                    "🚀 Business Growth: Strong potential for collaborative projects that bridge technical implementation and business strategy.",
+                    "🌟 Learning Exchange: You gain product insights while Marcus learns about technical feasibility and implementation."
+                ]
+            },
+            elena: {
+                name: "Elena Rodriguez",
+                title: "UX Designer",
+                location: "Austin, TX",
+                avatar: "E",
+                score: "👍 82%",
+                matchReason: "Elena's design expertise pairs well with your technical background. This match offers great potential for creating user-friendly applications.",
+                sharedInterests: ["Design Systems", "User Experience", "Accessibility", "Design Thinking", "Prototyping"],
+                complementarySkills: ["Figma", "User Research", "Prototyping", "Design Systems", "Accessibility"],
+                experience: [
+                    "• 6+ years in UX/UI design",
+                    "• Previously at Spotify and Airbnb",
+                    "• Design degree from Parsons",
+                    "• Led design for 10+ products",
+                    "• Design systems expert"
+                ],
+                currentFocus: [
+                    "• Building inclusive design systems",
+                    "• User research and testing",
+                    "• Accessibility improvements",
+                    "• Design-dev collaboration",
+                    "• Mentoring junior designers"
+                ],
+                networkingGoals: ["Design Collaboration", "Design Systems", "Accessibility", "Cross-functional Teams"],
+                networkingDescription: "Looking to collaborate with developers on creating beautiful, accessible, and user-friendly digital experiences.",
+                whyMatch: [
+                    "🎯 Design-Dev Harmony: Your development skills combined with Elena's design expertise create seamless user experiences.",
+                    "🤝 Shared Quality Focus: Both committed to creating high-quality, accessible solutions for users.",
+                    "🚀 Creative Collaboration: Strong potential for projects that showcase both technical excellence and design innovation.",
+                    "🌟 Skill Enhancement: You gain design insights while Elena learns about technical constraints and possibilities."
+                ]
+            }
+        };
+
+        // Modal functionality
+        const modal = document.getElementById('detailModal');
+        const closeModal = document.getElementById('closeModal');
+        const viewDetailsButtons = document.querySelectorAll('.view-details-btn');
+
+        // Open modal with person data
+        viewDetailsButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const person = button.dataset.person;
+                const data = personData[person];
+                
+                // Update modal content
+                document.getElementById('modalName').textContent = data.name;
+                document.getElementById('modalTitle').textContent = data.title;
+                document.getElementById('modalLocation').textContent = data.location;
+                document.getElementById('modalAvatar').textContent = data.avatar;
+                document.getElementById('modalScore').textContent = data.score;
+                document.getElementById('modalMatchReason').textContent = data.matchReason;
+                
+                // Update shared interests
+                const sharedInterestsContainer = document.getElementById('modalSharedInterests');
+                sharedInterestsContainer.innerHTML = data.sharedInterests.map(interest => 
+                    `<span class="px-3 py-1 bg-green-100 text-green-700 text-sm rounded-full">${interest}</span>`
+                ).join('');
+                
+                // Update complementary skills
+                const complementarySkillsContainer = document.getElementById('modalComplementarySkills');
+                complementarySkillsContainer.innerHTML = data.complementarySkills.map(skill => 
+                    `<span class="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full">${skill}</span>`
+                ).join('');
+                
+                // Update experience
+                const experienceContainer = document.getElementById('modalExperience');
+                experienceContainer.innerHTML = data.experience.map(exp => `<p>${exp}</p>`).join('');
+                
+                // Update current focus
+                const currentFocusContainer = document.getElementById('modalCurrentFocus');
+                currentFocusContainer.innerHTML = data.currentFocus.map(focus => `<p>${focus}</p>`).join('');
+                
+                // Update networking goals
+                const networkingGoalsContainer = document.getElementById('modalNetworkingGoals');
+                const goalsTags = data.networkingGoals.map(goal => 
+                    `<span class="px-3 py-1 bg-purple-100 text-purple-700 text-sm rounded-full">${goal}</span>`
+                ).join('');
+                networkingGoalsContainer.innerHTML = `
+                    <div class="flex flex-wrap gap-2 mb-3">${goalsTags}</div>
+                    <p class="text-gray-700 text-sm">${data.networkingDescription}</p>
+                `;
+                
+                // Update why match
+                const whyMatchContainer = document.getElementById('modalWhyMatch');
+                whyMatchContainer.innerHTML = data.whyMatch.map(reason => `<p>${reason}</p>`).join('');
+                
+                // Show modal
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        // Close modal
+        closeModal.addEventListener('click', () => {
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close modal when clicking outside
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close modal on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Chat button functionality
+        const chatButtons = document.querySelectorAll('.chat-btn');
+        chatButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const person = button.dataset.person;
+                // Store the person data in localStorage to pass to chat page
+                localStorage.setItem('chatPerson', person);
+                // Redirect to chat page
+                window.location.href = 'chat.html';
+            });
+        });
+
+        // Mobile menu functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const openIcon = document.getElementById('mobile-menu-open-icon');
+        const closeIcon = document.getElementById('mobile-menu-close-icon');
+
+        if (mobileMenuButton && mobileMenu && openIcon && closeIcon) {
+            mobileMenuButton.addEventListener('click', () => {
+                const isOpen = !mobileMenu.classList.contains('hidden');
+                if (isOpen) {
+                    mobileMenu.classList.add('hidden');
+                    openIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                } else {
+                    mobileMenu.classList.remove('hidden');
+                    openIcon.classList.add('hidden');
+                    closeIcon.classList.remove('hidden');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

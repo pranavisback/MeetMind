@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - MeetMind Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/meetmind-favicon.svg" type="image/svg+xml">
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+              <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center">
+                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"></path></svg>
+              </div>
+              <span class="text-xl font-bold text-gray-900">MeetMind</span>
+            </a>
+          </div>
+          <nav class="hidden md:flex space-x-8">
+            <a href="dashboard.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-indigo-600 hover:bg-gray-50">Dashboard</a>
+            <a href="profile.html" class="px-3 py-2 rounded-md text-sm font-medium bg-indigo-100 text-indigo-700">Profile</a>
+            <a href="matching.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-indigo-600 hover:bg-gray-50">Matching</a>
+            <a href="chat.html" class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-indigo-600 hover:bg-gray-50">Chat</a>
+          </nav>
+          <div class="flex items-center space-x-4">
+            <span class="hidden sm:block text-sm font-medium text-gray-900">Demo User</span>
+            <div class="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center"><svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg></div>
+            <button id="mobile-menu-button" class="md:hidden p-2 text-gray-400 hover:text-gray-600" title="Open mobile menu"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path id="mobile-menu-open-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path><path id="mobile-menu-close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+          </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden">
+          <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
+            <a href="dashboard.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-indigo-600 hover:bg-gray-50">Dashboard</a>
+            <a href="profile.html" class="block px-3 py-2 rounded-md text-base font-medium bg-indigo-100 text-indigo-700">Profile</a>
+            <a href="matching.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-indigo-600 hover:bg-gray-50">Matching</a>
+            <a href="chat.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-indigo-600 hover:bg-gray-50">Chat</a>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-900">Edit Profile</h1>
+            <p class="text-gray-600 mt-2">Update your information to help others connect with you</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Form Section -->
+            <div class="lg:col-span-2">
+                <form class="space-y-6">
+                    <!-- Basic Information -->
+                    <div class="card">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Basic Information</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div><label for="first-name" class="block text-sm font-medium text-gray-700 mb-1">First Name *</label><input id="first-name" name="first-name" type="text" value="Demo" class="input-field" required placeholder="First Name" title="First Name"></div>
+                            <div><label for="last-name" class="block text-sm font-medium text-gray-700 mb-1">Last Name *</label><input id="last-name" name="last-name" type="text" value="User" class="input-field" required placeholder="Last Name" title="Last Name"></div>
+                            <div><label for="professional-title" class="block text-sm font-medium text-gray-700 mb-1">Professional Title *</label><input id="professional-title" name="professional-title" type="text" value="Software Developer" class="input-field" required placeholder="Professional Title" title="Professional Title"></div>
+                            <div><label for="company" class="block text-sm font-medium text-gray-700 mb-1">Company</label><input id="company" name="company" type="text" value="Tech Inc." class="input-field" placeholder="Company" title="Company"></div>
+                            <div><label for="city" class="block text-sm font-medium text-gray-700 mb-1">City</label><input id="city" name="city" type="text" value="San Francisco" class="input-field" placeholder="City" title="City"></div>
+                            <div><label for="country" class="block text-sm font-medium text-gray-700 mb-1">Country</label><input id="country" name="country" type="text" value="USA" class="input-field" placeholder="Country" title="Country"></div>
+                        </div>
+                        <div class="mt-4"><label for="bio" class="block text-sm font-medium text-gray-700 mb-1">Bio</label><textarea id="bio" name="bio" rows="4" class="input-field" placeholder="Short bio" title="Bio">Passionate developer with expertise in web technologies.</textarea></div>
+                    </div>
+
+                    <!-- Skills -->
+                    <div class="card">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Skills & Expertise</h3>
+                        <div class="flex space-x-2 mb-4"><input type="text" placeholder="Add a skill..." class="input-field flex-1"><button type="button" class="btn-primary px-4">Add</button></div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-md">React<button type="button" class="ml-2 text-blue-500 hover:text-blue-700">×</button></span>
+                            <span class="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-md">Node.js<button type="button" class="ml-2 text-blue-500 hover:text-blue-700">×</button></span>
+                        </div>
+                    </div>
+
+                    <!-- Interests -->
+                    <div class="card">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Interests</h3>
+                        <div class="flex space-x-2 mb-4"><input type="text" placeholder="Add an interest..." class="input-field flex-1"><button type="button" class="btn-primary px-4">Add</button></div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="inline-flex items-center px-3 py-1 bg-green-100 text-green-700 text-sm rounded-md">Artificial Intelligence<button type="button" class="ml-2 text-green-500 hover:text-green-700">×</button></span>
+                            <span class="inline-flex items-center px-3 py-1 bg-green-100 text-green-700 text-sm rounded-md">Startups<button type="button" class="ml-2 text-green-500 hover:text-green-700">×</button></span>
+                        </div>
+                    </div>
+
+                    <!-- Networking Goals -->
+                    <div class="card">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Networking Goals</h3>
+                        <div class="flex space-x-2 mb-4"><input type="text" placeholder="Add a goal..." class="input-field flex-1"><button type="button" class="btn-primary px-4">Add</button></div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="inline-flex items-center px-3 py-1 bg-purple-100 text-purple-700 text-sm rounded-md">Find a Mentor<button type="button" class="ml-2 text-purple-500 hover:text-purple-700">×</button></span>
+                            <span class="inline-flex items-center px-3 py-1 bg-purple-100 text-purple-700 text-sm rounded-md">Job Opportunities<button type="button" class="ml-2 text-purple-500 hover:text-purple-700">×</button></span>
+                        </div>
+                    </div>
+
+                    <!-- Professional Links -->
+                    <div class="card">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Professional Links</h3>
+                        <div><label class="block text-sm font-medium text-gray-700 mb-1">LinkedIn URL</label><input type="url" placeholder="https://linkedin.com/in/username" class="input-field"></div>
+                        <div class="mt-4"><label class="block text-sm font-medium text-gray-700 mb-1">Website/Portfolio</label><input type="url" placeholder="https://yourwebsite.com" class="input-field"></div>
+                    </div>
+
+                    <div class="flex justify-end"><button type="button" class="btn-primary">Save Profile</button></div>
+                </form>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="lg:col-span-1 space-y-6">
+                <div class="p-6 bg-white rounded-2xl shadow-lg">
+                    <h4 class="text-lg font-semibold text-gray-800 mb-4">Profile Completion</h4>
+                    <div class="w-full bg-gray-200 rounded-full h-3"><div class="bg-gradient-to-r from-blue-500 to-purple-600 h-3 rounded-full profile-progress-bar"></div></div>
+                    <div class="mt-2 text-sm text-gray-600">Overall Progress: <span class="font-bold">75%</span></div>
+                </div>
+                <div class="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl shadow-lg">
+                    <h4 class="text-lg font-semibold text-blue-900 mb-4">💡 Profile Tips</h4>
+                    <ul class="text-sm text-blue-800 space-y-3">
+                        <li class="flex items-start"><span class="mr-2 text-blue-500">•</span><span>Add specific skills to improve AI matching accuracy</span></li>
+                        <li class="flex items-start"><span class="mr-2 text-blue-500">•</span><span>Include clear networking goals to attract relevant connections</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
