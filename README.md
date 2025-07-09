@@ -18,7 +18,7 @@ MeetMind is a comprehensive AI-powered platform that revolutionizes networking a
 
 <div align="center">
   <a href="https://pranavisback.github.io/MeetMind/" target="_blank">
-    <img src="https://img.shields.io/badge/🌐_Try_MeetMind_Live-4CAF50?style=for-the-badge&logo=github&logoColor=white&labelColor=2E7D32" alt="Try MeetMind Live" />
+    <img src="https://img.shields.io/badge/🌐_Try_MeetMind_Live-4CAF50?style=for-the-badge&logoColor=white&labelColor=2E7D32&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyUzYuNDggMjIgMTIgMjIgMjIgMTcuNTIgMjIgMTJTMTcuNTIgMiAxMiAyWk0xMiAyMEM3LjU4IDIwIDQgMTYuNDIgNCAxMlM3LjU4IDQgMTIgNCAxNiA3LjU4IDIwIDEyUzE2LjQyIDIwIDEyIDIwWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTEyIDZDOC42OSA2IDYgOC42OSA2IDEyUzguNjkgMTggMTIgMTggMTggMTUuMzEgMTggMTJTMTUuMzEgNiAxMiA2Wk0xMiAxNkMxMC44IDE2IDEwIDE1LjIgMTAgMTRTMTAuOCAxMiAxMiAxMlMxNCAxMi44IDE0IDE0UzEzLjIgMTYgMTIgMTZaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K" alt="Try MeetMind Demo Live" />
   </a>
 </div>
 
