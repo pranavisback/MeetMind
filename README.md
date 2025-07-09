@@ -16,7 +16,11 @@ MeetMind is a comprehensive AI-powered platform that revolutionizes networking a
 
 ## 🚀 Live Demo
 
-**[🌐 Try MeetMind Live](https://pranavisback.github.io/MeetMind/)**
+<div align="center">
+  <a href="https://pranavisback.github.io/MeetMind/" target="_blank">
+    <img src="https://img.shields.io/badge/🌐_Try_MeetMind_Live-4CAF50?style=for-the-badge&logo=github&logoColor=white&labelColor=2E7D32" alt="Try MeetMind Live" />
+  </a>
+</div>
 
 Experience the platform in action! Create your profile, explore AI-powered matching, and connect with other attendees.
 
